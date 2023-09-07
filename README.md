@@ -5,7 +5,6 @@ In-order to make the bot auto-greet when the user opens the website we must use 
 
 '''javascript
 <script>
-     
       window.botpressWebChat.onEvent(
         function (event) {
           if (event.type === 'LIFECYCLE.LOADED') {
@@ -14,6 +13,7 @@ In-order to make the bot auto-greet when the user opens the website we must use 
         },
         ['LIFECYCLE.LOADED']
       )
-    </script>
+</script>
 
 '''
+
