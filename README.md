@@ -19,6 +19,9 @@
 
 Paste the above code snippet in your html file for the website.
 
+#### NOTE:
+Make sure to add a ```trigger``` node at the start of your botpress flowchart.
+
 
 
 
