@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Triggers</title>
+  </head>
+ 
+  <body>
+    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "Chat with bot",
+      "botConversationDescription": "Yoga Vista helper bot",
+      "botId": "8be3a2ec-c77f-452c-b34e-3b4f46b1f5ca",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "8be3a2ec-c77f-452c-b34e-3b4f46b1f5ca",
+      "lazySocket": true
+  });
+</script>
+    
+    <script>
+     
+      window.botpressWebChat.onEvent(
+        function (event) {
+          if (event.type === 'LIFECYCLE.LOADED') {
+            window.botpressWebChat.sendEvent({ type: 'show' })
+          }
+        },
+        ['LIFECYCLE.LOADED']
+      )
+    </script>
+  
+  </body>
+</html>
