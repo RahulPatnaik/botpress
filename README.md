@@ -22,7 +22,7 @@ Paste the above code snippet in your html file for the website.
 #### NOTE:
 Make sure to add a ```trigger``` node at the start of your botpress flowchart.
 
-## The above method is no longer needed . you can simply use the ```trigger``` node at the start of your flowchart to make it work.
+## The above method is no longer needed. You can simply use the ```trigger``` node at the start of your flowchart to make it work.
 
 ### 2. To connect your bot to zapier in-order to send queries use the following code snippet :
 
