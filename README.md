@@ -45,7 +45,7 @@ try {
  2. Replace the "---" with your zapier.com webhook URL.
 
 ### NOTE:
-This is just a sample for leadData. You must change the variables to the names you have created in your workflow.
+This is just a sample for leadData. You must change the variables to the names that you have created in your workflow.
 
 
 ### 3. To connect stack-ai to your botpress bot, use the following code snippet :
