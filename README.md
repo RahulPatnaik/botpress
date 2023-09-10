@@ -33,19 +33,48 @@ const leadData = {name: workflow.name,
                   day: workflow.day,
                   time: workflow.time}
 try {
-    const response = await axios.post('https://hooks.zapier.com/hooks/catch/16444759/3r2jxau/', leadData)
+    const response = await axios.post('---', leadData)
     console.log(response.data)
     workflow.zapierSuccess = true
 }  catch(error) {
   console.error(error)
 }
 ~~~
-Paste the above in your execute code block.
+##### STEPS:
+ 1. Paste the above in your execute code block.
+ 2. Replace the "---" with your zapier.com webhook URL.
 
 ### NOTE:
 This is just a sample for leadData. You must change the variables to the names you have created in your workflow.
 
 
+### 3. To connect stack-ai to your botpress bot, use the following code snippet :
+
+~~~javascript
+const endpoint='---'
+const headers = {
+    Authorization : 'Bearer ...',
+    'Content-type': 'application/json'
+}
+const data = {
+    'in-0': workflow.question,
+}
+try{
+    const response = await axios.post(endpoint, data ,{headers})
+    workflow.apiResponse = response.data['out-0']
+ } catch (error) {
+    throw new Error('stack-error: ${error}')
+ }
+~~~
+
+##### STEPS:
+1. Paste the above in your execute code block.
+
+2. Replace the "---" with the actual endpoint link on your stack-ai account.
+
+3. Replace the "..." with your unique bearer key in your stack-ai account.
+
+4. In this code snippet, the variable that receives the stack-ai answer is "workflow.apiResponse", change it accordingly.
 
 
 
