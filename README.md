@@ -17,7 +17,7 @@
 
 ~~~
 
-Paste the above code snippet in your html file for the website.
+Paste the above code snippet in your HTML file for the website.
 
 #### NOTE:
 Make sure to add a ```trigger``` node at the start of your botpress flowchart.
@@ -78,6 +78,19 @@ try{
 
 4. In this code snippet, the variable that receives the stack-ai answer is "workflow.apiResponse", change it accordingly.
 
+### 4. To lets users start chatting with the Chatbot without needing to click any buttons or menus.
 
+~~~javascript
+<script>
+window.botpressWebChat.onEvent(
+        function () {
+            window.botpressWebChat.sendEvent({ type: "show" });
+        },
+        ["LIFECYCLE.LOADED"]
+    );
+</script>    
+~~~
+
+Paste the above code into your HTML file for your website.
 
 
