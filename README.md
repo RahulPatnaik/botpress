@@ -44,7 +44,7 @@ try {
 ~~~
 ##### STEPS:
  1. Paste the above in your execute code block.
- 2. Replace the "---" with your zapier.com webhook URL.
+ 2. Replace the ```---``` with your zapier.com webhook URL.
 
 ### NOTE:
 This is just a sample for leadData. You must change the variables to the names that you have created in your workflow.
