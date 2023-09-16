@@ -72,9 +72,9 @@ try{
 ##### STEPS:
 1. Paste the above in your execute code block.
 
-2. Replace the "---" with the actual endpoint link on your stack-ai account.
+2. Replace the ```---``` with the actual endpoint link on your stack-ai account.
 
-3. Replace the "..." with your unique bearer key in your stack-ai account.
+3. Replace the ```...``` with your unique bearer key in your stack-ai account.
 
 4. In this code snippet, the variable that receives the stack-ai answer is "workflow.apiResponse", change it accordingly.
 
