@@ -93,4 +93,42 @@ window.botpressWebChat.onEvent(
 
 Paste the above code into your HTML file for your website.
 
+### 5. Full screen chatbot.
 
+~~~javascript
+
+<script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+<script>
+    window.botpressWebChat.init({
+        
+        "botId": "<your-bot-id>",
+        "clientId": "<your-client-id>",
+ 
+        
+        "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
+        "messagingUrl": "https://messaging.botpress.cloud",
+ 
+        
+        "botName": "Test",
+ 
+        
+        "containerWidth": "100%25",
+        "layoutWidth": "100%25",
+ 
+        
+        "hideWidget": true,
+        "disableAnimations": true,
+    });
+
+    window.botpressWebChat.onEvent(
+        function () {
+            window.botpressWebChat.sendEvent({ type: "show" });
+        },
+        ["LIFECYCLE.LOADED"]
+    );
+</script>
+~~~
+ The above code can be pasted in your HTML file.
+
+ ##### STEPS:
+ 1. Once you have pasted the above code in your HTML file, replace the ```<your-bot-id>``` with your bot-ID and the ```<your-client-id>``` with your client-ID. Both of which can be found in your configurable code in your chatbot's dashboard.
