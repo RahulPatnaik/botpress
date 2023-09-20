@@ -133,7 +133,7 @@ Paste the above code into your HTML file for your website.
  1. Once you have pasted the above code in your HTML file, replace the ```<your-bot-id>``` with your bot-ID and the ```<your-client-id>``` with your client-ID. Both of which can be found in your configurable code in your chatbot's dashboard.
 
 
- ### 6. Connecting Vectara DB to your chatbot.
+ ### 6. Connecting Vectara DB to your chatbot to perform semantic search on various document formats
 
  ~~~javascript
  const endpoint = '<URL>';
@@ -182,3 +182,37 @@ Paste the above code into your HTML file for your website.
 
  worflow.apiResponse = formattedParagraph;
  ~~~
+
+ ##### STEPS:
+ 1. The ```endpoint``` variable holds your URL for your connection to Vectara DB.
+ 2. The ```<CUSTOMER_ID>``` is created along with your Vectara account.
+ 3. The ```<CORPUS_ID>``` is pretty much your knowledge-base in Vectara.
+ 4. ~~~javascript 
+    'contextConfig': {
+            'charsBefore': 10,
+            'charsAfter': 10,
+            'sentencesBefore': 2,
+            'sentencesAfter': 2,
+            'startTag': "<b>",
+            'endTag': "</b>"
+        },
+    ~~~
+    This part of the code lets you edit the semantic search results , to maybe increase or decrease the search area or receiving end of the information.
+5.  We are using the ```workflow.apiQuery``` as the varaible name to execute the query on, you may edit as per your needs, and 
+    similarly we are also using the ```worflow.apiResponse``` to hold the final results received from the DB.
+6. Paste the above code in your ```execute-code``` block and edit the needed details.
+
+These are the supported file types : 
+   ~~~
+   Commonmark / Markdown (md extension).
+   PDF/A (pdf).
+   Open Office (odt).
+   Microsoft Word (doc, docx).
+   Microsoft Powerpoint (ppt, pptx).
+   Text files (txt).
+   HTML files (.html).
+   LXML files (.lxml).
+   RTF files (.rtf).
+   ePUB files (.epub).
+   Email files conforming to RFC 822.
+   ~~~
