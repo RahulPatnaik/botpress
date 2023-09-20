@@ -92,7 +92,7 @@ window.botpressWebChat.onEvent(
 
 Paste the above code into your HTML file for your website.
 
-### 5. Full screen chatbot.
+### 5. Full screen chatbot :
 
 ~~~javascript
 
