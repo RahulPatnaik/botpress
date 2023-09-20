@@ -131,3 +131,54 @@ Paste the above code into your HTML file for your website.
 
  ##### STEPS:
  1. Once you have pasted the above code in your HTML file, replace the ```<your-bot-id>``` with your bot-ID and the ```<your-client-id>``` with your client-ID. Both of which can be found in your configurable code in your chatbot's dashboard.
+
+
+ ### 6. Connecting Vectara DB to your chatbot.
+
+ ~~~javascript
+ const endpoint = '<URL>';
+
+ const headers = {
+    'Content-type': 'application/json',
+    'Accept': 'application/json',
+    'customer-id': '<CUSTOMER_ID>'
+    'x-api-key': '<API_KEY>'
+ };
+
+ const payload ={
+    'query': [{
+        'query': workflow.apiQuery,
+        'start': 0,
+        'numResults': 5,
+        'contextConfig': {
+            'charsBefore': 10,
+            'charsAfter': 10,
+            'sentencesBefore': 2,
+            'sentencesAfter': 2,
+            'startTag': "<b>",
+            'endTag': "</b>"
+        },
+        'corpusKey': [{
+            'customerId': '<CUSTOMER_ID>',
+            'corpusId': '<CORPUS_ID>' //knowledge-base
+        }],
+        'summary': [{
+            'summarizePromptName': 'string',
+            'responseLang': 'string',
+            'maxSummarizedResults': 0
+        }],
+   }]
+ }
+
+ const result = await axios.post(endpoint, payload, {headers});
+
+ const response = result.data.responseSet[0].response;
+
+ response.forEach(info) => {
+    const title = info.metadata.find(meta => meta.name === 'title').value;
+    const paragraph = info.text;
+    formattedParagraph += 'Title: ' + title + '\n' + 'Info: ' + paragraph +'\n';
+ };
+
+ worflow.apiResponse = formattedParagraph;
+ ~~~
