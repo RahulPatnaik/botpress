@@ -77,7 +77,7 @@ try{
 
 4. In this code snippet, the variable that receives the stack-ai answer is "workflow.apiResponse", change it accordingly.
 
-### 4. To lets users start chatting with the Chatbot without needing to click any buttons or menus.
+### 4. To lets users start chatting with the Chatbot without needing to click any buttons or menus :
 
 ~~~javascript
 <script>
@@ -133,7 +133,7 @@ Paste the above code into your HTML file for your website.
  1. Once you have pasted the above code in your HTML file, replace the ```<your-bot-id>``` with your bot-ID and the ```<your-client-id>``` with your client-ID. Both of which can be found in your configurable code in your chatbot's dashboard.
 
 
- ### 6. Connecting Vectara DB to your chatbot to perform semantic search on various document formats
+ ### 6. Connecting Vectara DB to your chatbot to perform semantic search on various document formats :
 
  ~~~javascript
  const endpoint = '<URL>';
